@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="notes.css">
+  <link rel="stylesheet" href="uploadNotes.css">
+  <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-storage.js"></script>
+        <!-- <script src="uploadNotes.js"></script> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+    var varification ;
+  
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyCr-Y2FeIuLcckh7Cm3l5_dT3AaHES3xss",
+        authDomain: "notesholder-2ca53.firebaseapp.com",
+        databaseURL: "https://notesholder-2ca53-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "notesholder-2ca53",
+        storageBucket: "notesholder-2ca53.appspot.com",
+        messagingSenderId: "232316399054",
+        appId: "1:232316399054:web:5b53cee3030651a87bcf9f"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+const auth =firebase.auth();
+
+
+// FOR SEM 1
+//   var userId=localStorage.getItem('id');
+function show(){
+var Semester=document.getElementById('semester').value;
+var Subject=document.getElementById('subject').value;
+
+firebase.database().ref('User/MCA/'+Semester+'/'+Subject).once('value').then(function(snapshot){
+var name=(snapshot.val() && snapshot.val().Name);
+var notespdf=(snapshot.val() && snapshot.val().Notespdf);
+
+var storageRef = firebase.storage().ref();
+    storageRef.child('User/MCA/'+Semester+'/'+Subject+'/'+'MCA'+Subject+'.pdf').getDownloadURL()
+  .then((url) => {
+    // `url` is the download URL for 'images/stars.jpg'
+
+    // This can be downloaded directly:
+    var xhr = new XMLHttpRequest();
+    xhr.responseType = 'blob';
+    xhr.onload = (event) => {
+      var blob = xhr.response;
+    };
+    xhr.open('GET', url);
+    xhr.send();
+
+    // Or inserted into an <img> element
+    var pdf =url;
+    var pdff = document.getElementById('pdfa');
+    pdff.setAttribute('href', url);
+
+
+    document.getElementById('link').innerHTML=url;
+   
+    // img.setAttribute('src', url);
+  })
+  .catch((error) => {
+    // Handle any errors
+  });
+
+if(name==null){
+  var msg=" Notes Not Yet Uploaded";
+  document.getElementById('name').innerHTML="";
+  document.getElementById('pdf').innerHTML=msg;
+  document.getElementById('varifybyipsa').innerHTML="";
+}
+else{
+document.getElementById('name').innerHTML="Uploaded By : "+name;
+// document.getElementById('pdf').innerHTML="Notes : "+notespdf;
+document.getElementById('varifybyipsa').innerHTML="Varified By IpsaNotesHolder";
+}
+});
+}
+
+
+
+</script>
+
+<nav class="nav">
+  <ul>
+
+    <li class="navfield">
+      <a class="navfield" href="contact.html">Contact</a>
+      <!-- <Link class="navfield" to="/Contact">Contact</Link> -->
+    </li>
+    <li class="navfield">
+      <a class="navfield" href="uploadNotes.html">Upload Notes</a>
+      <!-- <Link class="navfield" to="/UploadNotes">Upload Notes</Link> -->
+    </li>
+    <li class="navfield">
+      <a class="navfield" href="allNotes.html">All Notes</a>
+      <!-- <Link class="navfield" to="/AllNotes">All Notes</Link> -->
+    </li>
+    <li class="navfield">
+      <a class="navfield" href="about.html">About</a>
+      <!-- <Link class="navfield" to="/About">About</Link> -->
+    </li>
+   
+    </ul>
+    
+    <a href="index.html"><img src="images/ipsa_logo.png"/><b class="notesholder">Notes Holder</b></a>
+
+</nav>
+
+<p style="margin-top: 80px;" class ="text_color">Choose Your Semester And Subject</p>
+
+    <div class="maindiv">
+      <label for="cars">Choose Semester:</label>
+      <select class="selectclass" name="semester" id="semester">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+      <label for="cars">Choose Subject:</label>
+      <select class="selectclass" name="subject" id="subject">
+        <option value="sub1">Subject 1</option>
+        <option value="sub2">Subject 2</option>
+        <option value="sub3">Subject 3</option>
+        <option value="sub4">Subject 4</option>
+        </select>
+        <section class="buttonsection">
+        <button class="selectclass" onclick="show()">show</button>
+      </section>
+    </div>
+   
+
+
+    <h1 id="name"></h1>
+    <h1 id="varifybyipsa"></h1>
+    <a href="" id="pdfa"> Download Notes</a>
+
+</body>
+</html>

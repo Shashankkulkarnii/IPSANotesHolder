@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-storage.js"></script>
+    <script src="uploadNotes.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="uploadNotes.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <nav class="nav">
+        <ul>
+
+          <li class="navfield">
+            <a class="navfield" href="contact.html">Contact</a>
+            <!-- <Link class="navfield" to="/Contact">Contact</Link> -->
+          </li>
+          <li class="navfield">
+            <a class="navfield" href="uploadNotes.html">Upload Notes</a>
+            <!-- <Link class="navfield" to="/UploadNotes">Upload Notes</Link> -->
+          </li>
+          <li class="navfield">
+            <a class="navfield" href="allNotes.html">All Notes</a>
+            <!-- <Link class="navfield" to="/AllNotes">All Notes</Link> -->
+          </li>
+          <li class="navfield">
+            <a class="navfield" href="about.html">About</a>
+            <!-- <Link class="navfield" to="/About">About</Link> -->
+          </li>
+         
+          </ul>
+          
+          <a href="index.html"><img src="dadaji.jpg"/><b class="notesholder">Notes Holder</b></a>
+
+      </nav>
+      <p class="upload_YourNotes">Enter Your Notes</p>
+
+    <div class="cardd">
+        <input class="inputcss" type="text" placeholder="Enter Name"  id="Name"/>
+        <input class="inputcss" type="Email" placeholder="Enter Email" id="Email"/>
+        <input class="inputcss" type="password" placeholder="Enter password" id="Password"/>
+        <input class="inputcss" type="text" placeholder="College Name" id="ClgName"/>
+        <b>Enter Notes Deatailes.</b>
+        <section>
+        <select style="margin-right: 3px; padding: 0 5px 0 5px;" class="inputcss" name="Cources" placeholder="Cource" id="Cource">
+        <option value="" disabled selected hidden>Cource</option>
+        <option>BCA</option>
+       <option>MCA</option>
+       <option>BBA</option>
+       <option>MBA</option>
+        </select>
+        <select style="margin-left: 3px; padding: 0 5px 0 5px;" class="inputcss" name="Cources" placeholder="semester" id="Semester">
+        <option value="" disabled selected hidden>Semester</option>
+        <option>1</option>
+       <option>2</option>
+       <option>3</option>
+       <option>4</option>
+       <option>5</option>
+       <option>6</option>
+        </select>
+        <input type="file"  id="files" name="files[]" multiple />
+        </section>
+        <input class="inputcss" type="text" placeholder="Enter Subject Name" id="SubjectName" />
+        
+        <button onclick="signup()" id="signup">Submit</button>
+     
+        </div>
+     
+        <div class="footer">
+            <p>© 2021 Copyright: NotesHolder.com</p>
+            </div>
+            <div class="footer">
+                <p>© 2021 Copyright: NotesHolder.com</p>
+                </div>
+           </div>
+
+           
+</body>
+</html>

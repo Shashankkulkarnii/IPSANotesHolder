@@ -1,0 +1,42 @@
+/* .UploadNotes{
+    background-color: darkslategray;
+} */
+.cardd{
+    border-radius: 20px;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    /* margin-top: 80px; */
+    margin-bottom: 200px;
+    background-color: slategray;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    /* align-content: center; */
+    align-items: center;
+    height: 80%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+.upload_YourNotes{
+    margin-top: 80px;
+    color: slategray; 
+    text-align: center;
+    font-size: 30px; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.inputcss{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+b{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.pdf{
+    margin-left: 19%;
+    margin-right: auto;
+    text-align: center;
+}

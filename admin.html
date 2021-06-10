@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // usersendtoadmindmin
+         // Your web app's Firebase configuration
+
+  // Initialize Firebase
+
+
+        // main database
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+    apiKey: "AIzaSyAZCwoYkZfZ12dTLoGRwK0vyvjVrMTi-0Q",
+    authDomain: "codex-150b2.firebaseapp.com",
+    databaseURL: "https://codex-150b2-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "codex-150b2",
+    storageBucket: "codex-150b2.appspot.com",
+    messagingSenderId: "555510907029",
+    appId: "1:555510907029:web:a20ce4e208f28fb2a1db9c"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    
+    const auth =firebase.auth();
+    
+    //   var userId=localStorage.getItem('id');
+    firebase.database().ref('User/MCA/1/sub1').once('value').then(function(snapshot){
+     var name=(snapshot.val() && snapshot.val().Name);
+     var password=(snapshot.val() && snapshot.val().password);
+     var email=(snapshot.val() && snapshot.val().Email);
+     var clgname=(snapshot.val() && snapshot.val().ClgName);
+     var cource=(snapshot.val() && snapshot.val().Cource);
+     var semester=(snapshot.val() && snapshot.val().Semester);
+     var notespdf=(snapshot.val() && snapshot.val().Notespdf);
+     var subjectname=(snapshot.val() && snapshot.val().SubjectName);
+    //   var age=(snapshot.val() && snapshot.val().UserAge);
+    
+    document.getElementById('Name').innerHTML=name;
+    document.getElementById('Email').innerHTML=email;
+    document.getElementById('Password').innerHTML=password;
+    document.getElementById('ClgName').innerHTML=clgname;
+    document.getElementById('Cource').innerHTML=cource;
+    document.getElementById('Sem').innerHTML=semester;
+    document.getElementById('Pdf').innerHTML=notespdf;
+    document.getElementById('SubjectName').innerHTML=subjectname;
+    //   document.getElementById('cnic').innerHTML=cnic;
+
+
+    });
+    function signupToMainDB(){
+
+
+  
+  var Name=document.getElementById('Name').innerHTML;
+  var Email=document.getElementById('Email').innerHTML;
+  var ClgName=document.getElementById('ClgName').innerHTML;
+  var Password=document.getElementById('Password').innerHTML;
+  var Cource=document.getElementById('Cource').innerHTML;
+  var Semester=document.getElementById('Sem').innerHTML;
+//   var Notespdf=document.getElementById('pdf').innerHTML;
+  var SubjectName=document.getElementById('SubjectName').innerHTML;
+  firebase.auth().createUserWithEmailAndPassword(Email,Password).then(function(){
+   // alert('User Register successfully');
+   var id=firebase.auth().currentUser.uid;
+   firebase.database().ref('User/'+Cource+'/'+Semester+'/'+SubjectName).set({
+    Name:Name,
+    Email:Email,
+    ClgName:ClgName,
+    password:Password,
+    Cource:Cource,
+    Semester:Semester,
+    // Notespdf:Notespdf,
+    SubjectName:SubjectName,
+   });
+
+
+   alert("signup");
+  }).catch(function(error){
+
+   var errorcode=error.code;
+   var errormsg=error.message;
+
+  });
+  
+
+}
+
+    </script>
+
+<h1 id="Name"></h1>
+<h1 id="Password"></h1>
+<h1 id="Email"></h1>
+<h1 id="ClgName"></h1>
+<h1 id="Cource"></h1>
+<h1 id="Sem"></h1>
+<h1 id="Pdf"></h1>
+<h1 id="SubjectName"></h1>
+<button onclick="signupToMainDB()">Upload</button>
+
+<!-- <h1 id="name"></h1>
+<h1 id="subjectname"></h1>
+<h1 id="courcename"></h1>
+<h1 id="notes"></h1>
+<h1 id="semester"></h1>
+</body> -->
+</html>

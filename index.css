@@ -1,0 +1,113 @@
+.bodyofhome{
+    text-decoration: none;
+  }
+  ul{
+    background-color: darkgray;
+    /* overflow: hidden; */
+    line-height: 40px;
+    text-decoration: none;
+    
+  }
+  .nav{
+    text-decoration: none;
+    /* line-height: 40px; */
+    /* background-color: aquamarine; */
+  }
+  .navfield{
+    margin-top: 12px;
+    color: slategray;
+    float: right;
+    margin-right: 16px;
+    display: block;
+    text-decoration: none;
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .text_color{
+    color: slategray; 
+    text-align: center;
+    font-size: 30px; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .notesholder{
+    text-decoration:none;
+    color: darkblue;
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+  }
+  
+  .footer {
+    position:fixed;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+    background-color: rgb(58, 59, 59);
+    color: white;
+    text-align: center;
+  }
+  .ipsa{
+    margin-top: 80px;
+text-align: center;
+font-size: 40px;
+font-family: 'Rubik', sans-serif;
+color: slategray;
+}
+
+/* grid css start */
+.column {
+    width: 25%;
+    padding: 0 30px 0 30px;
+    display: inline-block;
+    margin-bottom: 50px;
+
+  }
+  
+  /* Remove extra left and right margins, due to padding */
+  .row {
+    margin: 0 10% 0 13%;
+  
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+      
+    content: "";
+    display: table;
+    clear: both;
+    margin-bottom: 50px;
+  }
+  
+  /* Responsive columns */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Style the counter cards */
+  .card {
+      margin-top: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: #cecdcd;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  /* grid css end */
+  
+  @media only screen and (max-width: 900px) {
+    .navfield {
+      font-size: 25px;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .navfield {
+      font-size: 15px;
+      margin-right: 6px;
+    }
+  }
+  

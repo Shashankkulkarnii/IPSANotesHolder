@@ -1,0 +1,21 @@
+.maindiv{
+    margin-top: 80px;
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    color: slategray; 
+}
+
+.selectclass{
+    font-size: 30px;
+}
+.uppertext{
+        color: slategray; 
+        text-align: center;
+        font-size: 30px; 
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      
+}
+.buttonsection{
+    margin-top: 20px;
+}
