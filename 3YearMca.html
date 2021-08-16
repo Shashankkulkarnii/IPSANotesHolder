@@ -20,12 +20,13 @@
   
     // Your web app's Firebase configuration
     var firebaseConfig = {
-      apiKey: "AIzaSyBNd_WN2V9QbNeCDGK6enQTeRpGQ7IXeHQ",
-    authDomain: "notesholderr.firebaseapp.com",
-    projectId: "notesholderr",
-    storageBucket: "notesholderr.appspot.com",
-    messagingSenderId: "394948414083",
-    appId: "1:394948414083:web:bf5488eb1acbe5ef1769b6"
+        apiKey: "AIzaSyCr-Y2FeIuLcckh7Cm3l5_dT3AaHES3xss",
+        authDomain: "notesholder-2ca53.firebaseapp.com",
+        databaseURL: "https://notesholder-2ca53-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "notesholder-2ca53",
+        storageBucket: "notesholder-2ca53.appspot.com",
+        messagingSenderId: "232316399054",
+        appId: "1:232316399054:web:5b53cee3030651a87bcf9f"
       };
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
@@ -40,12 +41,12 @@ function show(){
 var Semester=document.getElementById('semester').value;
 var Subject=document.getElementById('subject').value;
 
-firebase.database().ref('User/MCA/'+Semester+'/'+Subject).once('value').then(function(snapshot){
+firebase.database().ref('User/3YMCA/'+Semester+'/'+Subject).once('value').then(function(snapshot){
 var name=(snapshot.val() && snapshot.val().Name);
 var notespdf=(snapshot.val() && snapshot.val().Notespdf);
 
 var storageRef = firebase.storage().ref();
-    storageRef.child('User/MCA/'+Semester+'/'+Subject+'/'+'MCA'+Subject+'.pdf').getDownloadURL()
+    storageRef.child('User/3YMCA/'+Semester+'/'+Subject+'/'+'MCA'+Subject+'.pdf').getDownloadURL()
   .then((url) => {
     // `url` is the download URL for 'images/stars.jpg'
 

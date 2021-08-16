@@ -40,12 +40,12 @@ function show(){
 var Semester=document.getElementById('semester').value;
 var Subject=document.getElementById('subject').value;
 
-firebase.database().ref('User/MCA/'+Semester+'/'+Subject).once('value').then(function(snapshot){
+firebase.database().ref('User/BBA/'+Semester+'/'+Subject).once('value').then(function(snapshot){
 var name=(snapshot.val() && snapshot.val().Name);
 var notespdf=(snapshot.val() && snapshot.val().Notespdf);
 
 var storageRef = firebase.storage().ref();
-    storageRef.child('User/MCA/'+Semester+'/'+Subject+'/'+'MCA'+Subject+'.pdf').getDownloadURL()
+    storageRef.child('User/BBA/'+Semester+'/'+Subject+'/'+'MCA'+Subject+'.pdf').getDownloadURL()
   .then((url) => {
     // `url` is the download URL for 'images/stars.jpg'
 

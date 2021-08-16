@@ -1,13 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-storage.js"></script>
     <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="index.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <h1>Contact Page</h1>
+    <script>
+           var firebaseConfig = {
+        apiKey: "AIzaSyCr-Y2FeIuLcckh7Cm3l5_dT3AaHES3xss",
+        authDomain: "notesholder-2ca53.firebaseapp.com",
+        databaseURL: "https://notesholder-2ca53-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "notesholder-2ca53",
+        storageBucket: "notesholder-2ca53.appspot.com",
+        messagingSenderId: "232316399054",
+        appId: "1:232316399054:web:5b53cee3030651a87bcf9f"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+        
+        const auth =firebase.auth();
+          function signup(){
+  
+  var Name=document.getElementById('Name').value;
+  var Email=document.getElementById('Email').value;
+  var Query=document.getElementById('Query').value;
+  
+  firebase.database().ref('Queries/').set({
+    Name:Name,
+    Email:Email,
+    Query:Query,
+   });
+  alert("we got your query");
+
+}
+    </script>
+    <nav class="nav">
+        <ul>
+
+          <li class="navfield">
+            <a class="navfield" href="contact.html">Contact</a>
+            <!-- <Link class="navfield" to="/Contact">Contact</Link> -->
+          </li>
+          <li class="navfield">
+            <a class="navfield" href="uploadNotes.html">Upload Notes</a>
+            <!-- <Link class="navfield" to="/UploadNotes">Upload Notes</Link> -->
+          </li>
+          <li class="navfield">
+            <a class="navfield" href="allNotes.html">All Notes</a>
+            <!-- <Link class="navfield" to="/AllNotes">All Notes</Link> -->
+          </li>
+          <li class="navfield">
+            <a class="navfield" href="about.html">About</a>
+            <!-- <Link class="navfield" to="/About">About</Link> -->
+          </li>
+         
+          </ul>
+          
+          <a href="index.html"><img src="images/ipsa_logo.png"/><b class="notesholder">Notes Holder</b></a>
+
+      </nav>
+      <p class="ipsa">Contact Us </p>
+      <p class ="text_color">If You Have Any Qurey Or Advice Feel Free To Tell Us </p>
+
+      <div class="form" >
+          <input class="inputele" type="email" id="Email" placeholder="Enter Your Email">
+          <input class="inputele" type="text" id="Name" placeholder="Enter Your Name">
+          <textarea class="inputele" name="query" id="Query" cols="30" rows="10" placeholder="Enter Your Query" style="color: slategray;"></textarea>
+          <button onclick="signup()" class="inputele">Submit</button>
+      </div>
+      <div class="footer">
+        <p>© 2021 Copyright: NotesHolder.com</p>
+        </div>
 </body>
 </html>

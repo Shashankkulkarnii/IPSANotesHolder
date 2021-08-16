@@ -2,6 +2,8 @@
     background-color: darkslategray;
 } */
 .cardd{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     border-radius: 20px;
     padding-top: 50px;
     padding-bottom: 100px;
@@ -19,6 +21,7 @@
     flex-direction: column;
 }
 .upload_YourNotes{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-top: 80px;
     color: slategray; 
     text-align: center;
@@ -27,15 +30,23 @@
 
 }
 .inputcss{
+    font-size: 20px;
+    /* color: white; */
+    color: slategray; 
     margin-top: 10px;
     margin-bottom: 10px;
+    border-radius: 20px;
+    background-color: darkblue;
+    
+
 }
 b{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
     padding-top: 20px;
     padding-bottom: 10px;
 }
 .pdf{
+    
     margin-left: 19%;
     margin-right: auto;
     text-align: center;

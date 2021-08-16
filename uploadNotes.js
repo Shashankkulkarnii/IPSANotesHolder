@@ -2,13 +2,12 @@
         // Your web app's Firebase configuration
        // Your web app's Firebase configuration
        var firebaseConfig = {
-        apiKey: "AIzaSyCr-Y2FeIuLcckh7Cm3l5_dT3AaHES3xss",
-        authDomain: "notesholder-2ca53.firebaseapp.com",
-        databaseURL: "https://notesholder-2ca53-default-rtdb.asia-southeast1.firebasedatabase.app",
-        projectId: "notesholder-2ca53",
-        storageBucket: "notesholder-2ca53.appspot.com",
-        messagingSenderId: "232316399054",
-        appId: "1:232316399054:web:5b53cee3030651a87bcf9f"
+        apiKey: "AIzaSyBNd_WN2V9QbNeCDGK6enQTeRpGQ7IXeHQ",
+        authDomain: "notesholderr.firebaseapp.com",
+        projectId: "notesholderr",
+        storageBucket: "notesholderr.appspot.com",
+        messagingSenderId: "394948414083",
+        appId: "1:394948414083:web:bf5488eb1acbe5ef1769b6"
       };
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);

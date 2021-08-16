@@ -1,0 +1,28 @@
+.form{
+    background-color: slategray;
+    display: grid;    
+    text-align: center;
+    color: white;
+    margin-left:auto ;
+    margin-right: auto;
+    width: 30%;
+    border-radius: 20px;
+    padding-bottom: 60px;
+    padding-top: 60px;
+    margin-top: 60px;
+
+}
+.inputele{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    /* margin-top: 20px; */
+    margin-bottom: 20px;
+    background-color:darkblue;
+    color: slategray;
+    font-size: 20px;
+    border-radius: 20px;
+    width: 50%;
+    
+
+}

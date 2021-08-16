@@ -11,9 +11,28 @@
     width: 25%;
     margin: 10px;
     background-color: slategray;
-    
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.itemscourceincard:hover{
+    opacity: 0.5;
 
 }
+.courceimg:hover{
+    opacity: 0.5;
+    
+}
+.centered {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    font-weight: 300;
+  }
 .headings{
     margin-top: 80px;
     font-size: 30px; 
@@ -38,4 +57,9 @@
     background-color: rgb(58, 59, 59);
     color: white;
     text-align: center;
+  }
+  .courcebottomtext{
+      font-size: 20px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-weight: 800;
   }

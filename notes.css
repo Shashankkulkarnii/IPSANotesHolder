@@ -19,3 +19,11 @@
 .buttonsection{
     margin-top: 20px;
 }
+#pdfa{
+    display: none;
+}
+.resulttxt{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: darkblue; 
+}
